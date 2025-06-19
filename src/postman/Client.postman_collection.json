@@ -1,0 +1,815 @@
+{
+	"info": {
+		"_postman_id": "1ff907bc-802b-47dd-af43-f301d449482c",
+		"name": "Client",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32981444"
+	},
+	"item": [
+		{
+			"name": "Create Client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"phone\": \"+6692747326\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8078/assignment-service/clients/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8078",
+					"path": [
+						"assignment-service",
+						"clients",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Phone Number",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"phone\": \"+662747326\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "188"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:41:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid phone format: +662747326\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/create\",\n    \"timestamp\": \"2025-06-19 22:41:16\",\n    \"validationErrors\": null\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"phone\": \"+6692747326\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "140"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:41:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"createdAt\": \"2025-06-19T22:41:37.4641927\",\n    \"updatedAt\": \"2025-06-19T22:41:37.4641927\"\n}"
+				},
+				{
+					"name": "Email Exist",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"phone\": \"+6692747326\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 17:41:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client with email dardar2020@gmail.com already exists\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/create\",\n    \"timestamp\": \"2025-06-20 00:41:26\",\n    \"validationErrors\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "List Clients",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8078/assignment-service/clients?page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8078",
+					"path": [
+						"assignment-service",
+						"clients"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients?page=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "833"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:06:13 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"name\": \"John\",\n            \"email\": \"john@gmail.com\",\n            \"createdAt\": \"2025-06-19T10:54:02.793\",\n            \"updatedAt\": \"2025-06-19T21:56:59.687\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"James\",\n            \"email\": \"james@gmail.com\",\n            \"createdAt\": \"2025-06-19T11:54:02.793\",\n            \"updatedAt\": \"2025-06-19T21:53:40.72\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Stitch\",\n            \"email\": \"stitch626@gmail.com\",\n            \"createdAt\": \"2025-06-19T17:24:31.773\",\n            \"updatedAt\": \"2025-06-19T21:52:02.083\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Nwe Ni Aung\",\n            \"email\": \"nweniaung90@gmail.com\",\n            \"createdAt\": \"2025-06-19T17:25:31.773\",\n            \"updatedAt\": \"2025-06-19T21:46:49.443\"\n        }\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalPages\": 1,\n    \"totalElements\": 4,\n    \"size\": 10,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 4,\n    \"number\": 0,\n    \"empty\": false\n}"
+				},
+				{
+					"name": "Fail",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients?page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "210"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:39:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"An unexpected error occurred: Failed to retrieve clients\",\n    \"error\": \"Internal Server Error\",\n    \"status\": 500,\n    \"path\": \"/assignment-service/clients\",\n    \"timestamp\": \"2025-06-19 22:39:39\",\n    \"validationErrors\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Client",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8078/assignment-service/clients/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8078",
+					"path": [
+						"assignment-service",
+						"clients",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:56:23 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 5,\n    \"name\": \"Dar Dar\",\n    \"email\": \"dardar2020@gmail.com\",\n    \"createdAt\": \"2025-06-19T22:41:37.463\",\n    \"updatedAt\": \"2025-06-19T22:41:37.463\"\n}"
+				},
+				{
+					"name": "Invalid Client Id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"0"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:56:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid client ID: 0\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/0\",\n    \"timestamp\": \"2025-06-19 22:56:57\",\n    \"validationErrors\": null\n}"
+				},
+				{
+					"name": "Client Not found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"6"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "178"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 15:57:51 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Client not found with id: 6\",\n    \"error\": \"Client Not Found\",\n    \"status\": 404,\n    \"path\": \"/assignment-service/clients/6\",\n    \"timestamp\": \"2025-06-19 22:57:51\",\n    \"validationErrors\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8078/assignment-service Copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"John\",\r\n    \"email\": \"john@gmail.com\",\r\n    \"phone\": \"+6692747322\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8078/assignment-service/clients/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8078",
+					"path": [
+						"assignment-service",
+						"clients",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Invalid Client Id",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+662747325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"0"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 14:45:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid client ID: 0\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/0\",\n    \"timestamp\": \"2025-06-19 21:45:53\",\n    \"validationErrors\": null\n}"
+				},
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+6692747325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"4"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "141"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 14:46:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 4,\n    \"name\": \"Nwe Ni Aung\",\n    \"email\": \"nweniaung90@gmail.com\",\n    \"createdAt\": \"2025-06-19T17:25:31.773\",\n    \"updatedAt\": \"2025-06-19T21:46:49.4418119\"\n}"
+				},
+				{
+					"name": "Duplicate Email",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nweniaung90@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "213"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 14:48:16 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Another client with email nweniaung90@gmail.com already exists\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/3\",\n    \"timestamp\": \"2025-06-19 21:48:16\",\n    \"validationErrors\": null\n}"
+				},
+				{
+					"name": "Invalid Email Format",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"nweniaung90@\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 14:49:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid email format: nweniaung90@\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/3\",\n    \"timestamp\": \"2025-06-19 21:49:22\",\n    \"validationErrors\": null\n}"
+				},
+				{
+					"name": "Invalid Phone Format",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\": \"+662747325\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8078/assignment-service/clients/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8078",
+							"path": [
+								"assignment-service",
+								"clients",
+								"3"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "183"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 19 Jun 2025 14:50:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Invalid phone format: +662747325\",\n    \"error\": \"Validation Error\",\n    \"status\": 400,\n    \"path\": \"/assignment-service/clients/3\",\n    \"timestamp\": \"2025-06-19 21:50:01\",\n    \"validationErrors\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "External Api",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8078/assignment-service/clients/external",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8078",
+					"path": [
+						"assignment-service",
+						"clients",
+						"external"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

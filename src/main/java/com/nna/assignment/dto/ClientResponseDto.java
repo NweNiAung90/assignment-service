@@ -9,6 +9,7 @@ public class ClientResponseDto {
     private Long id;
     private String name;
     private String email;
+    private String phone;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 

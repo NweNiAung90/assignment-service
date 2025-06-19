@@ -493,7 +493,7 @@
 			]
 		},
 		{
-			"name": "http://localhost:8078/assignment-service Copy",
+			"name": "Update Client",
 			"request": {
 				"auth": {
 					"type": "noauth"

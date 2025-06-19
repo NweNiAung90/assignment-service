@@ -136,7 +136,6 @@ public class ClientServiceImpl implements ClientService {
             throw new ClientValidationException("Client request cannot be null");
         }
 
-        // Additional custom validation logic can be added here
         if (clientDto.getEmail() != null && !isValidEmail(clientDto.getEmail())) {
             throw new ClientValidationException("Invalid email format: " + clientDto.getEmail());
         }

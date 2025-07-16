@@ -136,17 +136,9 @@ public class ClientServiceImpl implements ClientService {
             throw new ClientValidationException("Client request cannot be null");
         }
 
-        if (clientDto.getEmail() != null && !isValidEmail(clientDto.getEmail())) {
-            throw new ClientValidationException("Invalid email format: " + clientDto.getEmail());
-        }
-
-        if (clientDto.getPhone() != null && !isValidPhone(clientDto.getPhone())) {
+        if (!isValidPhone(clientDto.getPhone())) {
             throw new ClientValidationException("Invalid phone format: " + clientDto.getPhone());
         }
-    }
-
-    private boolean isValidEmail(String email) {
-        return email.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
     }
 
     private boolean isValidPhone(String phone) {

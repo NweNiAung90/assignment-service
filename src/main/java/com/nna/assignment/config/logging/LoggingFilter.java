@@ -20,7 +20,7 @@ import java.nio.charset.StandardCharsets;
 @WebFilter("/*")
 public class LoggingFilter extends OncePerRequestFilter {
 
-    private static final Logger logger = LogManager.getLogger(GlobalExceptionHandler.class);
+    private static final Logger logger = LogManager.getLogger(LoggingFilter.class);
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
